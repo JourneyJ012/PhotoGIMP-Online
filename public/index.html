@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Studio — online image editor</title>
+<meta name="description" content="A free, Photoshop-style image editor with layers, selections, brushes and adjustments that runs entirely in your browser.">
+<meta name="theme-color" content="#323232">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/studio.css">
+<script type="module" src="/js/main.js"></script>
+</head>
+<body>
+<div id="app">
+  <nav id="menubar" role="menubar" aria-label="Main menu"></nav>
+  <div id="main">
+    <div id="toolbar" role="toolbar" aria-label="Tools" aria-orientation="vertical"></div>
+    <main id="center">
+      <div id="tabs" role="tablist" aria-label="Documents"></div>
+      <div id="workspace">
+        <div id="ruler-corner"></div>
+        <canvas id="ruler-h" class="ruler" aria-hidden="true"></canvas>
+        <canvas id="ruler-v" class="ruler" aria-hidden="true"></canvas>
+        <div id="viewport" class="empty">
+          <canvas id="view" tabindex="0" aria-label="Image canvas"></canvas>
+          <textarea id="text-editor" spellcheck="false" aria-label="Text" hidden></textarea>
+        </div>
+        <div id="welcome"></div>
+      </div>
+      <footer id="statusbar"></footer>
+    </main>
+    <aside id="dock" aria-label="Panels"></aside>
+  </div>
+</div>
+<div id="menus"></div>
+<div id="dialogs"></div>
+<div id="toasts" aria-live="polite"></div>
+<input type="file" id="file-input" hidden accept="image/*,.ora">
+<noscript><p class="noscript">Studio needs JavaScript to run.</p></noscript>
+</body>
+</html>
